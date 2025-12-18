@@ -427,3 +427,110 @@ export const workPermitCancellationStep3 = () =>
   cy.wait(2000);
    cy.xpath('/html/body/div[5]/div/div[3]/button[1]').click();
 }
+
+export const ircRecommendationStep1 = () => 
+{
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/a").click();
+  cy.wait(2000);
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/ul/li[1]/a").click();
+  cy.wait(10000);
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a', { timeout: 15000 }).should('be.visible').eq(0).click();
+  cy.wait(10000);
+  cy.get('[id="application_status"]').select('Assign Inspection Officer');
+  cy.wait(2000);
+  cy.xpath('/html/body/div[1]/div/div/div[3]/form/div/div/div[3]/div/div[4]/div[2]/span/span[1]/span/span[1]').click();
+  cy.xpath('/html/body/span/span/span[2]/ul/li[1]').click();
+  cy.wait(2000);
+  cy.get('[id="io_submission_deadline"]').should('exist').type('01-Apr-2025');
+  cy.get('[id="remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="process_btn_id"]').click();
+}
+
+export const ircRecommendationStep2 = () => 
+{
+   cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/a").click();
+  cy.wait(2000);
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/ul/li[1]/a").click();
+  cy.wait(10000);
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a', { timeout: 15000 }).should('be.visible').eq(0).click();
+  cy.wait(10000);
+  cy.get('[id="application_status"]').select('Field Visit');
+  cy.wait(2000);
+  cy.xpath('/html/body/div[1]/div/div/div[3]/form/div/div/div[3]/div/div[4]/div[2]/span/span[1]/span/span[1]').click();
+  cy.xpath('/html/body/span/span/span[2]/ul/li').click();
+  cy.wait(2000);
+  cy.get('[id="remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="process_btn_id"]').click();
+
+
+}
+
+export const ircRecommendationStep3 = () =>
+{
+
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/a").click();
+  cy.wait(2000);
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/ul/li[1]/a").click();
+  cy.wait(10000);
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a', { timeout: 15000 }).should('be.visible').eq(0).click();
+  cy.wait(10000);
+  cy.get('[id="application_status"]').select('Report Submitted');
+  cy.wait(2000);
+  cy.xpath('/html/body/div[1]/div/div/div[3]/form/div/div/div[3]/div/div[4]/div[2]/span/span[1]/span/span[1]').click();
+  cy.xpath('/html/body/span/span/span[2]/ul/li[5]').click();
+  cy.wait(2000);
+  cy.get('[name="fixed_production[]"]').type('4');
+  cy.wait(2000);
+  cy.get('[name="half_yearly_import[]"]').type('4');
+  cy.wait(2000);
+  cy.get('[name="apc_half_yearly_import_total_in_word"]').type('four');
+  cy.wait(2000);
+  cy.get('[name="irc_remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[name="entitlement_remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="process_btn_id"]').click();
+
+}
+
+export const ircRecommendationStep4 = () =>
+{
+
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/a").click();
+  cy.wait(2000);
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/ul/li[1]/a").click();
+  cy.wait(10000);
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a', { timeout: 15000 }).should('be.visible').eq(0).click();
+  cy.wait(10000);
+  cy.get('[id="application_status"]').select('Verified');
+  cy.wait(2000);
+  cy.xpath('/html/body/div[1]/div/div/div[3]/form/div/div/div[3]/div/div[4]/div[2]/span/span[1]/span/span[1]').click();
+  cy.xpath('/html/body/span/span/span[2]/ul/li[6]').click();
+  cy.wait(2000);
+  cy.get('[id="remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="process_btn_id"]').click();
+
+}
+
+export const ircRecommendationStep5 = () =>
+{
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/a").click();
+  cy.wait(2000);
+  cy.xpath("/html/body/div[1]/nav/div[4]/div/ul/li[10]/ul/li[1]/a").click();
+  cy.wait(10000);
+  cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a', { timeout: 15000 }).should('be.visible').eq(0).click();
+  cy.wait(10000);
+  cy.get('[id="application_status"]').select('Approved');
+  cy.wait(2000);
+  cy.get('[id="approval_copy_remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="remarks"]').type('lorem ipsum');
+  cy.wait(2000);
+  cy.get('[id="process_btn_id"]').click();
+  cy.xpath('/html/body/div[5]/div/div[3]/button[1]').click();
+}

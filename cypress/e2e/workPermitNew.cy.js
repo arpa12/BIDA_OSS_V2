@@ -4,10 +4,10 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistrationNew"
 import { workPermitNewStep1, workPermitNewStep2, workPermitNewStep3 } from "../pages/applicationProcess";
 
-import {workPermitNew, workPermitNewFinalPayment} from "../pages/workPermitNew"
+import {workPermitNew, workPermitNewFinalPayment} from "../pages/workPermit/workPermitNew";
 
 describe('Work Permit New', () => {
-  it.only('Work Permit New', () => {
+  it('Work Permit New', () => {
     cy.visit('/');  // Navigate to base URL
 
     // Perform login

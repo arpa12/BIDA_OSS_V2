@@ -4,7 +4,7 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistrationNew"
 import { workPermitExtensionStep1, workPermitExtensionStep2, workPermitExtensionStep3 } from "../pages/applicationProcess";
 
-import {workPermitExtension, workPermitExtensionFinalPayment} from "../pages/workPermitExtension"
+import {workPermitExtension, workPermitExtensionFinalPayment} from "../pages/workPermit/workPermitExtension";
 
 describe('Work Permit Extension', () => {
   it('Work Permit Extension', () => {

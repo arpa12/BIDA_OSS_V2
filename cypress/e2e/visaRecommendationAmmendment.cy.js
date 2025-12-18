@@ -4,7 +4,7 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistrationNew"
 import { visaRecommendationAmmendmentStep1, visaRecommendationAmmendmentStep2 } from "../pages/applicationProcess";
 
-import {visaRecommendationAmmendment} from "../pages/visaRecommendationAmmendment"
+import {visaRecommendationAmmendment} from "../pages/visaRecommendation/visaRecommendationAmmendment";
 
 describe('Visa Recommendation Ammendment', () => {
   it('Visa Recommendation Ammendment', () => {

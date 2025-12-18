@@ -4,7 +4,7 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistrationNew"
 import { workPermitCancellationStep1, workPermitCancellationStep2, workPermitCancellationStep3} from "../pages/applicationProcess";
 
-import {workPermitCancellation} from "../pages/workPermitCancellation"
+import {workPermitCancellation} from "../pages/workPermit/workPermitCancellation";
 
 describe('Work Permit Cancellation', () => {
   it('Work Permit Cancellation', () => {

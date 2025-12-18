@@ -4,7 +4,7 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistrationNew"
 import { workPermitAmendmentStep1, workPermitAmendmentStep2, workPermitAmendmentStep3} from "../pages/applicationProcess";
 
-import {workPermitAmendment, workPermitAmendmentFinalPayment} from "../pages/workPermitAmendment"
+import {workPermitAmendment, workPermitAmendmentFinalPayment} from "../pages/workPermit/workPermitAmendment";
 
 describe('Work Permit Amendment', () => {
   it('Work Permit Amendment', () => {
