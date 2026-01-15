@@ -2,12 +2,12 @@
 
 import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistration/bidaRegistrationNew"
-import { ircRecommendation2Step1, ircRecommendation2Step2, ircRecommendation2Step3, ircRecommendation2Step4, ircRecommendation2Step5 } from "../pages/applicationProcess";
+import { officePermissionStep1, officePermissionMeetingCreationStep2, officePermissionStep3, officePermissionStep4, officePermissionStep5 } from "../pages/applicationProcess";
 
-import { ircRecommendation2 } from "../pages/ircRecommendation/ircRecommendation2";
+import { officePermissionNew, officePermissionNewFinalPayment } from "../pages/officePermission/officePermissionNew";
 
-describe('IRC Recommendation 2nd Adhok', () => {
-  it.skip('IRC Recommendation 2nd Adhok Form Fillup & Submit Application with Payment', () => {
+describe('Office permission New', () => {
+  it.skip('Office permission New Form Fillup & Submit Application with Payment', () => {
     cy.visit('/');  // Navigate to base URL
 
     // Perform login
@@ -21,18 +21,21 @@ describe('IRC Recommendation 2nd Adhok', () => {
     cy.wait(5000);
     login.clickLoginButton();
     cy.wait(5000);
-    bidaRegistrationNew.selectCompanyModal()
-    // cy.wait(3000)
-    // bidaRegistrationNew.clickModalContinueButton()
+    
+    cy.xpath('/html/body/div[1]/div/div/div[3]/div/div/div/div/form/div/div[1]/div/div/span/span[1]/span/span[1]').click();
+    cy.wait(3000)
+    cy.xpath('/html/body/span/span/span[2]/ul/li[2]').click();
+    cy.wait(3000)
+    cy.xpath('/html/body/div[1]/div/div/div[3]/div/div/div/div/form/div/div[3]/div/div/button').click();
     cy.wait(3000)
     bidaRegistrationNew.dashboardInnerModal()
 
 
-    ircRecommendation2();
+    officePermissionNew();
 
   });
 
-   it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 1', () => {
+   it.skip('Office Permission Application Processing - Step 1', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -57,12 +60,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step1();
+      officePermissionStep1();
     //   cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
     //   cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click(); 
     });
   
-   it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 2', () => {
+   it.skip('Office Permission  Application Processing - Step 2', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -87,12 +90,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step2();
+      officePermissionMeetingCreationStep2();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-    it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 3', () => {
+   it.skip('Office Permission Application Processing - Step 3', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -117,12 +120,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step3();
+      officePermissionStep3();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-    it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 4', () => {
+    it.skip('Office Permission Application Processing - Step 4', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -137,22 +140,60 @@ describe('IRC Recommendation 2nd Adhok', () => {
       // login steps
       login.performLogin()
       cy.wait(5000)
-      login.enterUsername('rd1@batworld.com')
+      login.enterUsername('juisaha.ossp@gmail.com')
       cy.wait(5000)
       login.enterNextButton()
       cy.wait(5000)
-      login.enterPassword('Ossp@123')
+      login.enterPassword('123456A@')
       cy.wait(5000)
       login.clickLoginButton()
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step4();
+      officePermissionStep4();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-     it('IRC Recommendation 1st Adhok Application Processing - Step 5', () => {
+    it.skip('Office Permission Application Processing - Step 5', () => {
+         cy.visit('/')
+      
+      cy.origin('https://id.oss.net.bd', () => {
+        cy.on('uncaught:exception', (err) => {
+          if (err.message.includes('baseUrl') || err.message.includes('Identifier')) {
+            return false
+          }
+          return true
+        })
+      })
+      
+       // Perform login
+    login.performLogin();
+    cy.wait(5000);
+    login.enterUsername('corp.juisaha@gmail.com');
+    cy.wait(5000);
+    login.enterNextButton();
+    cy.wait(5000);
+    login.enterPassword('123456A@');
+    cy.wait(5000);
+    login.clickLoginButton();
+    cy.wait(5000);
+    
+    cy.xpath('/html/body/div[1]/div/div/div[3]/div/div/div/div/form/div/div[1]/div/div/span/span[1]/span/span[1]').click();
+    cy.wait(3000)
+    cy.xpath('/html/body/span/span/span[2]/ul/li[2]').click();
+    cy.wait(3000)
+    cy.xpath('/html/body/div[1]/div/div/div[3]/div/div/div/div/form/div/div[3]/div/div/button').click();
+    cy.wait(3000)
+    bidaRegistrationNew.dashboardInnerModal()
+
+  
+      officePermissionNewFinalPayment();
+      // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
+      // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
+    });
+
+    it('Office Permission Application Processing - Step 6', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -177,7 +218,7 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step5();
+      officePermissionStep5();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });

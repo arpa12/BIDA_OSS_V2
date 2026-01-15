@@ -14,11 +14,16 @@ class BidaRegistrationNew
   // }
 
   dashboardInnerModal(){
-    // Wait for the modal to become visible first
-    cy.get('#dashboardInvestorPopup').should('be.visible')
-    // Then wait for and click the button inside
-    cy.xpath('/html/body/div[1]/div/div/div[4]/div/div/div/button/span').should('be.visible').as('modalCloseBtn')
-    cy.get('@modalCloseBtn').click()
+    // Check if modal exists before interacting with it
+    cy.get('body').then($body => {
+      if ($body.find('#dashboardInvestorPopup').length > 0) {
+        // Wait for the modal to become visible first
+        cy.get('#dashboardInvestorPopup').should('be.visible')
+        // Then wait for and click the button inside
+        cy.xpath('/html/body/div[1]/div/div/div[4]/div/div/div/button/span').should('be.visible').as('modalCloseBtn')
+        cy.get('@modalCloseBtn').click()
+      }
+    })
   }
 
   bidaRegistrationDropdownMenuClick()

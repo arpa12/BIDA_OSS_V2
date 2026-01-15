@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-mochawesome-reporter/register';
+import 'cypress-xpath'; // Support for XPath selectors
 
 // Global uncaught exception handler to suppress third-party errors
 Cypress.on('uncaught:exception', (err, runnable) => {

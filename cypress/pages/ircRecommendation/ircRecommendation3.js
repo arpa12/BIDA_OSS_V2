@@ -1,18 +1,18 @@
-export const ircRecommendation2 = () =>
+export const ircRecommendation3 = () =>
 {
-     cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
     cy.wait(2000);
     cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/a').click();
     cy.wait(2000);
     cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[14]/a').click();
     cy.wait(2000);
-    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[14]/ul/li[4]/a').click();
+    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[14]/ul/li[6]/a').click();
     cy.wait(2000);
     cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[1]/div[2]/a/button').click();
     cy.wait(2000);
     cy.get('[id="irc_purpose_id"]').select('Import Of Raw Materials');
     cy.wait(2000);
-    cy.get('[id="irc_type_2"]').click();
+    cy.get('[id="irc_type_3"]').click();
     cy.wait(2000);
     cy.get('[id="last_br_yes"]').click();
     cy.wait(2000);
@@ -22,7 +22,7 @@ export const ircRecommendation2 = () =>
     cy.wait(2000);
     cy.get('[id="last_irc_yes"]').click();
     cy.wait(2000);
-    cy.get('[name="irc_ref_app_tracking_no"]').type('IRC-11Oct2025-00001')
+    cy.get('[name="irc_ref_app_tracking_no"]').type('IRC-2-11Jan2026-00002 ')
     cy.wait(2000);
     // cy.get('[name="irc_manually_approved_date"]').should('exist').type('01-Jan-2026')
     cy.get('[id="searchIRCinfo"]').click();
@@ -46,36 +46,20 @@ export const ircRecommendation2 = () =>
     // cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[3]/ul/li[2]/a').click();
     // cy.wait(2000);
     cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[2]/fieldset[2]/div[5]/div[2]/fieldset[7]/fieldset[2]/fieldset/div/div[2]/table/tbody/tr/td[8]/a[1]').click();
-    cy.xpath('/html/body/div[1]/div/div/div[3]/div[2]/div/div/form/div[2]/div[4]/table/tbody/tr/td[7]/a').click();
-
-    cy.get('[name="product_name[1]"]').type('test');
-    cy.wait(1000);
-    cy.get('[name="hs_code[1]"]').type('1234');
-    cy.wait(1000);
-    cy.get('[name="quantity[1]"]').type('1');
-    cy.wait(1000);
-    cy.get('[name="quantity_unit[1]"]').select('Box');
-    cy.wait(1000);
-    cy.get('[name="percent[0]"]').clear().type('10');
-    cy.wait(1000);
-    cy.get('[name="percent[1]"]').type('90');
-    cy.wait(1000);
-    cy.get('[name="price_taka[1]"]').type('1000');
-    cy.wait(1000);
+    cy.wait(2000);
+    cy.xpath('/html/body/div[1]/div/div/div[3]/div[2]/div/div/form/div[2]/div[4]/table/tbody/tr[2]/td[7]/a').click();
+    // cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[3]/ul/li[2]/a').click();
+    cy.wait(2000);
+    cy.get('[id="percent0"]').clear().type('100');
+    cy.wait(2000);
     cy.get('[id="machinery_create_btn"]').click();
     cy.wait(2000);
     cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[3]/ul/li[2]/a').click();
     cy.wait(2000);
     cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[3]/ul/li[2]/a').click();
-    cy.wait(2000);
-
 
     //Attachment
-   cy.get('[id="file122"]').attachFile('demo.pdf')
-   cy.wait(2000);
-   cy.get('[id="file123"]').attachFile('demo.pdf')
-   cy.wait(2000);
-   cy.get('[id="file124"]').attachFile('demo.pdf')
+   cy.get('[id="file145"]').attachFile('demo.pdf')
    cy.wait(2000);
    cy.xpath('/html/body/div[1]/div/div/div[3]/section/div[2]/div/div/div/div[2]/div/form/div[3]/ul/li[2]/a').click();
 

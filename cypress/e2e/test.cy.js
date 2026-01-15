@@ -1,21 +1,78 @@
 describe('Recorded Test', () => {
+  // Global handler to suppress third-party script errors
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    const ignoredErrors = [
+      'baseUrl', 'has already been declared', 'ResizeObserver loop',
+      'Script error', 'NetworkError', 'Load failed', 'cancelled', 'ChunkLoadError'
+    ];
+    if (ignoredErrors.some(msg => err.message.includes(msg))) {
+      console.log('Suppressed error:', err.message);
+      return false;
+    }
+    return true;
+  });
+
+  // ═══════════════════════════════════════════════════════════════
+  // PRE-CONFIGURE CROSS-ORIGIN ERROR HANDLERS
+  // Must be set up BEFORE navigation to these OAuth/SSO domains
+  // ═══════════════════════════════════════════════════════════════
+  before(() => {
+    cy.origin('https://uat-id.oss.net.bd', () => {
+      Cypress.on('uncaught:exception', (err) => {
+        console.log('Suppressed cross-origin error:', err.message);
+        return false;
+      });
+    });
+  });
+
   it('should perform recorded actions', () => {
     cy.visit('https://staging-bida-g2.oss.net.bd/');
-    cy.get('.ossServ-tabText-item.nav-link.public-service-item-click').eq(1).click({force: true});
-    cy.contains('a', 'Login /Registration').eq(1).click({force: true});
-    cy.visit('https://id-test.oss.net.bd/osspid-client/openid/v2/authorize?scope=openid&state=KMK9bqhRuWg7Xcslk45bZSfUc6HVG_vfh4OPrfxQ93c.ro_pwT4H3no.udROXK1NQeiXs6dWXwqJPg&response_type=code&client_id=63ed0bc6a0e08e100bf07e47c902b98c36aa1e64&redirect_uri=https%3A%2F%2Fidpg2.bidaquickserv.org%2Frealms%2FBIDA-STAGING%2Fbroker%2Fosspid-test%2Fendpoint&nonce=dA9qsA_jkmhFmBSsIa-h4A');
-    cy.get('#identifier').clear().type('samiulossp+3@gmail.com');
-    cy.get('#next_btn').click({force: true});
-    cy.get('#password').clear().type('123456a@');
-    cy.get('#login_btn').click({force: true});
-    cy.visit('https://staging-bida-g2.oss.net.bd/keycloak/callback?state=6277b1e14246ed39901e372db2ea6f27&session_state=343ff160-ec7b-444b-be70-6a910491dd96&code=0e634875-3186-4bf8-9b91-5339f9781d38.343ff160-ec7b-444b-be70-6a910491dd96.b9d44e5c-ad4d-41e8-97b3-a7565f0a893e');
-    cy.get('#myModalBtn').click({force: true});
-    cy.get('#steps_modal').click({force: true});
-    cy.visit('https://staging-bida-g2.oss.net.bd/dashboard');
-    cy.get('.close > span').click({force: true});
-    cy.get('.flex-column > h6').click({force: true});
-    cy.contains('a', 'Logout').first().click({force: true});
-    cy.visit('https://staging-bida-g2.oss.net.bd/');
-    cy.get('.ossServ-tabText-item.nav-link.public-service-item-click').eq(1).click({force: true});
+
+    // Close any open modals at start
+    cy.get('body').then($body => {
+      const modal = $body.find('.modal.fade.in, .modal.show, .modal[style*="display: block"]');
+      if (modal.length > 0) {
+        const closeBtn = modal.find('.close, button.close, [data-dismiss="modal"]');
+        if (closeBtn.length > 0) {
+          closeBtn.first().click();
+          cy.wait(500);
+        }
+      }
+    });
+
+    // Note: cypress-xpath plugin required for XPath selectors
+    // Install: npm install -D cypress-xpath
+    // Add to support/e2e.js: require('cypress-xpath')
+
+    cy.xpath('/html/body/div/section[3]/div/div[2]/div/div/div[2]/div[2]/div').first().click({ force: true });
+    cy.wait(2000);
+    cy.contains('a', 'Login/ Register in Classic Mode').click({ force: true });
+    cy.wait(2000);
+    // Handle cross-origin authentication on uat-id.oss.net.bd
+    cy.origin('https://uat-id.oss.net.bd', () => {
+      // Suppress uncaught exceptions from third-party OAuth pages
+      // Common errors: 'baseUrl already declared', 'ResizeObserver loop', etc.
+      cy.on('uncaught:exception', (err) => {
+        // Return false to prevent Cypress from failing the test
+        console.log('Cross-origin exception suppressed:', err.message);
+        return false;
+      });
+
+      cy.get('[id=\"identifier\"]').type('sysadmin2@batworld.com');
+      cy.wait(2000);
+      cy.get('[id=\"next_btn\"]').click({ force: true });
+      cy.wait(2000);
+      cy.get('[id=\"password\"]').type('password');
+      cy.wait(2000);
+      cy.get('[id=\"login_btn\"]').click({ force: true });
+      cy.wait(2000);
+      // TODO: XPath not supported in cy.origin() - please replace with CSS selector
+      // Original XPath: /html/body/div/form/div[2]/div[2]/div/div/div[2]/span
+      cy.get('REPLACE_WITH_CSS_SELECTOR').click({ force: true });
+      cy.wait(2000);
+      cy.get('[id=\"password\"]').type('Ossp@123');
+      cy.wait(2000);
+    });
+
   });
 });

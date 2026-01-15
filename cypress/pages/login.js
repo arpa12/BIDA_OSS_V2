@@ -1,5 +1,5 @@
 class Login {
-  loginRegistration = '/html/body/div/header/div[2]/div/nav/div[1]/a';
+  loginRegistration = '/html/body/div/header/div[2]/div/nav/div/ul/li[3]/div/a[2]';
   usernameInput = '[id="identifier"]';
   nextButton = '[id="next_btn"]';
   passwordInput = '[id="password"]';
@@ -9,7 +9,7 @@ class Login {
 
   performLogin() {
     cy.xpath(this.loginRegistration)
-      .contains('Login /Registration')
+      .contains('Login/ Register in Classic Mode')
       .click({ force: true });
   }
 

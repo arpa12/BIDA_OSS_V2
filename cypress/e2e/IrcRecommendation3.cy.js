@@ -2,12 +2,12 @@
 
 import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistration/bidaRegistrationNew"
-import { ircRecommendation2Step1, ircRecommendation2Step2, ircRecommendation2Step3, ircRecommendation2Step4, ircRecommendation2Step5 } from "../pages/applicationProcess";
+import { ircRecommendation3Step1,ircRecommendation3Step2, ircRecommendation3Step3, ircRecommendation3Step4, ircRecommendation3Step5 } from "../pages/applicationProcess";
 
-import { ircRecommendation2 } from "../pages/ircRecommendation/ircRecommendation2";
+import { ircRecommendation3 } from "../pages/ircRecommendation/ircRecommendation3";
 
-describe('IRC Recommendation 2nd Adhok', () => {
-  it.skip('IRC Recommendation 2nd Adhok Form Fillup & Submit Application with Payment', () => {
+describe('IRC Recommendation 3rd Adhok', () => {
+  it.skip('IRC Recommendation 3rd Adhok Form Fillup & Submit Application with Payment', () => {
     cy.visit('/');  // Navigate to base URL
 
     // Perform login
@@ -28,11 +28,11 @@ describe('IRC Recommendation 2nd Adhok', () => {
     bidaRegistrationNew.dashboardInnerModal()
 
 
-    ircRecommendation2();
+    ircRecommendation3();
 
   });
 
-   it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 1', () => {
+   it.skip('IRC Recommendation Application Processing - Step 1', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -57,12 +57,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step1();
+      ircRecommendation3Step1();
     //   cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
     //   cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click(); 
     });
   
-   it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 2', () => {
+   it.skip('IRC Recommendation  Application Processing - Step 2', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -87,12 +87,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step2();
+      ircRecommendation3Step2();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-    it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 3', () => {
+    it.skip('IRC Recommendation Application Processing - Step 3', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -117,12 +117,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step3();
+      ircRecommendation3Step3();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-    it.skip('IRC Recommendation 2nd Adhok Application Processing - Step 4', () => {
+    it.skip('IRC Recommendation Application Processing - Step 4', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -147,12 +147,12 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step4();
+      ircRecommendation3Step4();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });
 
-     it('IRC Recommendation 1st Adhok Application Processing - Step 5', () => {
+     it('IRC Recommendation Application Processing - Step 5', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {
@@ -177,7 +177,7 @@ describe('IRC Recommendation 2nd Adhok', () => {
       cy.wait(5000)
       // login.closeModal()
   
-      ircRecommendation2Step5();
+      ircRecommendation3Step5();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/a').click();
       // cy.xpath('/html/body/div[1]/nav/ul/li[4]/ul/li[5]/a').click();  
     });

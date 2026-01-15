@@ -1,0 +1,11 @@
+This is a placeholder file.
+
+Replace this with your actual test files (PDF, images, documents, etc.) that you want to use in your Cypress tests.
+
+Example files you might need:
+- demo.pdf
+- test-image.jpg
+- document.docx
+- sample.xlsx
+
+Just copy the files you used during test recording into this folder.
