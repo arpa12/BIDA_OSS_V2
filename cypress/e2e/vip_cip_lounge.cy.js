@@ -4,10 +4,10 @@ import login from "../pages/login";
 import {bidaRegistrationNew} from "../pages/bidaRegistration/bidaRegistrationNew"
 import { securrityClearanceStep1 } from "../pages/applicationProcess";
 
-import { securityClearance, officePermissionNewFinalPayment } from "../pages/securityClearance/securityClearance";
+import { vipCipLounge, vipCipLoungeFinalPayment } from "../pages/vip_cip_lounge/vip_cip_lounge";
 
-describe('Security Clearance', () => {
-  it.skip('Security Clearance Form Fillup & Submit Application with Payment', () => {
+describe('VIP CIP Lounge', () => {
+  it.skip('VIP CIP Lounge Form Fillup & Submit Application with Payment', () => {
     cy.visit('/');  // Navigate to base URL
 
     // Perform login
@@ -31,11 +31,11 @@ describe('Security Clearance', () => {
     bidaRegistrationNew.dashboardInnerModal()
 
 
-    securityClearance();
+    vipCipLounge();
 
   });
 
-   it('Office Permission Application Processing - Step 1', () => {
+   it.skip('VIP CIP Lounge Application Processing - Step 1', () => {
          cy.visit('/')
       
       cy.origin('https://id.oss.net.bd', () => {

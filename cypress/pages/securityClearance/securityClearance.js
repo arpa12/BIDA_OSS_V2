@@ -33,6 +33,8 @@ cy.get('[name="tin_no"]').type('123456789');
 cy.wait(2000);
 cy.get('[name="tin_certificate"]').attachFile('demo.pdf');
 cy.wait(2000);
+cy.get('[href="#next"]').should('be.visible').click();
+cy.wait(2000);
 cy.get('[id="country"]').select('Bangladesh');
 cy.wait(2000);
 cy.get('[name="state"]').type('Dhaka');
@@ -119,37 +121,37 @@ cy.get('[href="#next"]').should('be.visible').click();
 
 
 
-export const officePermissionAmendmentFinalPayment = () =>
-{
-    cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
-    cy.wait(2000);
-    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/a').click();
-    cy.wait(2000);
-    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[2]/a').eq(0).click();
-    cy.wait(2000);
-    cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[2]/ul/li[5]/a').click();
-    cy.wait(2000);
-    cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a',{ timeout: 15000 }).should('be.visible').eq(0).click();
-    cy.wait(2000);
+// export const securityClearanceFinalPayment = () =>
+// {
+//     cy.xpath('/html/body/div[1]/nav/ul/li[5]/a').click();
+//     cy.wait(2000);
+//     cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/a').click();
+//     cy.wait(2000);
+//     cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[2]/a').eq(0).click();
+//     cy.wait(2000);
+//     cy.xpath('/html/body/div[1]/nav/ul/li[5]/ul/li[1]/ul/li[2]/ul/li[5]/a').click();
+//     cy.wait(2000);
+//     cy.xpath('/html/body/div[1]/div/div/section/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/table/tbody/tr[1]/td[6]/a',{ timeout: 15000 }).should('be.visible').eq(0).click();
+//     cy.wait(2000);
     
-   //payment and submit
-   cy.get('[id="submitForm"]').scrollIntoView().click({force: true})
-    cy.wait(5000)
-    cy.get('[value="Account"]', { timeout: 15000 }).should('be.visible').click()
-    cy.wait(5000)
-    cy.xpath('/html/body/div[3]/div/div[6]/button[1]').click()
-    cy.wait(5000)
-    cy.get('[id="PayAccountNo"]').type('1234567891011')
-    cy.wait(3000)
-    cy.get('[id="PayAccountName"]').type('Jahangir Alam')
-    cy.wait(3000)
-    cy.get('[id="PayMobile"]').type('11111111111')
-    cy.wait(3000)
-    cy.xpath('/html/body/div[2]/form/div[2]/div/div[5]/div/div/button').click()
-    cy.wait(3000)
-    cy.get('[id="OTPVal"]').type('123456')
-    cy.wait(3000)
-    cy.get('[id="btnConfirm"]').click()
-    cy.wait(5000)
+//    //payment and submit
+//    cy.get('[id="submitForm"]').scrollIntoView().click({force: true})
+//     cy.wait(5000)
+//     cy.get('[value="Account"]', { timeout: 15000 }).should('be.visible').click()
+//     cy.wait(5000)
+//     cy.xpath('/html/body/div[3]/div/div[6]/button[1]').click()
+//     cy.wait(5000)
+//     cy.get('[id="PayAccountNo"]').type('1234567891011')
+//     cy.wait(3000)
+//     cy.get('[id="PayAccountName"]').type('Jahangir Alam')
+//     cy.wait(3000)
+//     cy.get('[id="PayMobile"]').type('11111111111')
+//     cy.wait(3000)
+//     cy.xpath('/html/body/div[2]/form/div[2]/div/div[5]/div/div/button').click()
+//     cy.wait(3000)
+//     cy.get('[id="OTPVal"]').type('123456')
+//     cy.wait(3000)
+//     cy.get('[id="btnConfirm"]').click()
+//     cy.wait(5000)
 
-}
+// }

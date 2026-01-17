@@ -1005,3 +1005,9 @@ export const projectOfficePermissionStep5 = () =>
   cy.xpath('/html/body/div[1]/div/div/div[3]/form/div/div/div[17]/div[3]/div/button').click();
   cy.xpath('/html/body/div[5]/div/div[3]/button[1]').click();
 }
+
+
+export const securrityClearanceStep1 = () =>
+  {
+    //no script for system issue
+  }
